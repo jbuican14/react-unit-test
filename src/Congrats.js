@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 /**
  * @function
  * @param {object} props
  * @return {JSX.Element}
  */
 
-export default function Congrats(props) {
+const Congrats = (props) => {
   if (props.success) {
     return (
       <div data-test="component-congrats" className="alert alert-success">
@@ -16,4 +17,9 @@ export default function Congrats(props) {
       <div data-test="component-congrats" className="alert alert-success" />
     );
   }
-}
+};
+
+Congrats.propTypes = {
+  success: PropTypes.bool.isRequired,
+};
+export default Congrats;
